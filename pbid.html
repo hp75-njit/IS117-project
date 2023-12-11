@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+		<title>Bootstrap Tutorial Sample Page</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-expand-md">
+			<a class="navbar-brand" href="index.html">Freelancers</a>
+			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="main-navigation">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="./index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="skills.html">Skills</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="PSearch.html">Project Search</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="pbid.html">Project bid</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact Us</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+        <form id="biddingForm">
+            <h2>Place Your Bid</h2>
+            
+            <label for="freelancerName">Your Name:</label>
+            <input type="text" id="freelancerName" name="freelancerName" required><br>
+        
+            <label for="projectID">Project ID</label>
+            <input type="text" id="projectID" name="ProjectID" required><br>
+
+            <label for="bidAmount">Bid Amount (in $):</label>
+            <input type="number" id="bidAmount" name="bidAmount" required><br>
+        
+            <label for="bidDetails">Bid Details:</label>
+            <textarea id="bidDetails" name="bidDetails" rows="4" required></textarea><br>
+        
+            <button type="button" onclick="submitBid()">Submit Bid</button>
+        </form>
+        
+        <script>
+            function submitBid() {
+                // Fetch values from the form
+                const freelancerName = document.getElementById('freelancerName').value;
+                const bidAmount = document.getElementById('bidAmount').value;
+                const bidDetails = document.getElementById('bidDetails').value;
+        
+                // Validate input (you may want to perform more thorough validation)
+                if (!freelancerName || !bidAmount || !bidDetails) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+        
+                // Simulate sending bid to the server (in a real application, you would use AJAX or fetch)
+                alert(`Bid submitted!\nFreelancer: ${freelancerName}\nBid Amount: $${bidAmount}\nDetails: ${bidDetails}`);
+        
+                // Optionally, you can reset the form
+                document.getElementById('biddingForm').reset();
+            }
+        </script>
+
+ <footer class="page-footer">
+	<div class="footer-copyright text-center">&copy; Hima Patel, 2023</div>
+</footer>
+		
+		<script src="jquery-3.5.1.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="main.js"></script>
+
+		
+	</body>
+	
+</html>
